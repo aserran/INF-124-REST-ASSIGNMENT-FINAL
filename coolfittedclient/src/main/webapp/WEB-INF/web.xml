@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This web.xml file is not required when using Servlet 3.0 container,
+     see implementation details http://jersey.java.net/nonav/documentation/latest/jax-rs.html -->
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <servlet>
+        <servlet-name>Jersey Web Application</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>jersey.config.server.provider.packages</param-name>
+            <param-value>org.coolfitted.coolfittedclient</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Jersey Web Application</servlet-name>
+        <url-pattern>/webapi/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+    	<servlet-name>HomeClientServlet</servlet-name>
+    	<servlet-class>org.coolfitted.coolfittedclient.HomeClientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>HomeClientServlet</servlet-name>
+    	<url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <servlet>
+    	<servlet-name>ArrivalClientServlet</servlet-name>
+    	<servlet-class>org.coolfitted.coolfittedclient.ArrivalClientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>ArrivalClientServlet</servlet-name>
+    	<url-pattern>/newarrivals</url-pattern>
+    </servlet-mapping>
+    <servlet>
+    	<servlet-name>SnapClientServlet</servlet-name>
+    	<servlet-class>org.coolfitted.coolfittedclient.SnapClientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>SnapClientServlet</servlet-name>
+    	<url-pattern>/snaps</url-pattern>
+    </servlet-mapping>
+    <servlet>
+    	<servlet-name>StrapClientServlet</servlet-name>
+    	<servlet-class>org.coolfitted.coolfittedclient.StrapClientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>StrapClientServlet</servlet-name>
+    	<url-pattern>/straps</url-pattern>
+    </servlet-mapping>
+</web-app>
