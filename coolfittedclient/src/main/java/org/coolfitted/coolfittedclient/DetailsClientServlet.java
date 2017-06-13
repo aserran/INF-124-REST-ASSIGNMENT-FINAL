@@ -20,7 +20,7 @@ import org.codehaus.jackson.type.TypeReference;
 import org.glassfish.jersey.client.ClientConfig;
 import org.coolfitted.coolfittedclient.Hat;
 
-public class SnapClientServlet extends HttpServlet{
+public class DetailsClientServlet extends HttpServlet{
 
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -31,17 +31,17 @@ public class SnapClientServlet extends HttpServlet{
 		System.out.println(target);
 		
 		String jsonResponse = 
-				target.path("coolfittedrest").path("webapi").path("home").request().
+				target.path("coolfittedrest").path("webapi").path("details").request().
 				accept(MediaType.APPLICATION_JSON).
 				get(String.class);
 		
 		ObjectMapper objectMapper = new ObjectMapper();
 		
-		List<Hat> hatlist = objectMapper.readValue(jsonResponse, new TypeReference<List<Hat>>(){});
+		Hat hat = objectMapper.readValue(jsonResponse, new TypeReference<Hat>(){});
 		// session stuff
-		request.setAttribute("hatlist", hatlist);
+		request.setAttribute("hat", hat);
 		try {
-			request.getRequestDispatcher("/snapbacks.jsp").forward(request, response);
+			request.getRequestDispatcher("/details.jsp").forward(request, response);
 		} catch (ServletException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

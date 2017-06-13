@@ -31,7 +31,7 @@ public class ArrivalClientServlet extends HttpServlet{
 		System.out.println(target);
 		
 		String jsonResponse = 
-				target.path("webapi").path("newarrivals").request().
+				target.path("coolfittedrest").path("webapi").path("home").request().
 				accept(MediaType.APPLICATION_JSON).
 				get(String.class);
 		
@@ -49,7 +49,7 @@ public class ArrivalClientServlet extends HttpServlet{
 	}
 	
 	private static URI getBaseURI(){
-		return UriBuilder.fromUri("http://localhost:8080/coolfittedrest").build();
+		return UriBuilder.fromUri("http://localhost").port(8080).build();
 	}
 	
 }
