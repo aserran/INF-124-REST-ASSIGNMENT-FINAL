@@ -31,7 +31,7 @@ and open the template in the editor.
 						<a href="newarrivals" class='label newarr'>New Arrivals</a>
 						<a href="snaps" class='label snap active'>Snapbacks</a>
 						<a href="straps" class='label strap'>Strapbacks</a>
-						<a href="aboutus.html" class='label aboutus'>About us</a>
+						<a href="aboutus.jsp" class='label aboutus'>About us</a>
                                                 <a href="cart.jsp" class='label cart'>Cart</a>
 					</div>
 				</div>

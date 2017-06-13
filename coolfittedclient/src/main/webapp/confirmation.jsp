@@ -27,7 +27,7 @@
 					<a href="newarr" class='label snap'>New Arrivals</a>
 					<a href="snapbacks" class='label snap'>Snapbacks</a>
 					<a href="strapbacks" class='label strap'>Strapbacks</a>
-					<a href="aboutus.html" class='label aboutus'>About Us</a>
+					<a href="aboutus.jsp" class='label aboutus'>About Us</a>
                                         <a href="cart.jsp" class='label cart active'>Cart</a>
 					</div>
 				</div>
