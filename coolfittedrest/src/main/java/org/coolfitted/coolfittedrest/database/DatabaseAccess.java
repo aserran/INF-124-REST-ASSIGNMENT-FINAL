@@ -11,10 +11,10 @@ import org.coolfitted.coolfittedrest.model.Hat;
 
 public class DatabaseAccess {
 
-	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	static final String DB_URL = "jdbc:mysql://localhost:3307/coolfitteddb";
-	static final String USER = "root";
-	static final String PASS = "inf124";
+    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+    static final String DB_URL = "jdbc:mysql://sylvester-mccoy-v3.ics.uci.edu/inf124-db-002";
+    static final String USER = "inf124-db-002";
+    static final String PASS = "K5GLfG5ho!!t";
 	static final String homequery = "SELECT images.imagepath, images.imagename, details.title, details.description, details.price FROM images INNER JOIN details ON images.imagename=details.imagename AND images.idimages > 47";
 	static final String snapquery = "SELECT images.imagepath, images.imagename, details.title, details.description, details.price FROM images INNER JOIN details ON images.imagename=details.imagename AND images.imagename LIKE '%snap1%'";
 	static final String strapquery = "SELECT images.imagepath, images.imagename, details.title, details.description, details.price FROM images INNER JOIN details ON images.imagename=details.imagename AND images.imagename LIKE '%strap1%'";
