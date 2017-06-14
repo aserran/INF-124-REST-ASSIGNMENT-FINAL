@@ -20,13 +20,13 @@
 			<div class='content'>
 				<div class='menubar'>
 				<div class='name'>
-					<a href="index" class="label compname">CoolFitted</a>
+					<a href="home" class="label compname">CoolFitted</a>
 				</div>
 				<div class='menu'>
-					<a href="index" class='label home'>Home</a>
-					<a href="newarr" class='label snap'>New Arrivals</a>
-					<a href="snapbacks" class='label snap'>Snapbacks</a>
-					<a href="strapbacks" class='label strap'>Strapbacks</a>
+					<a href="home" class='label home'>Home</a>
+					<a href="newarrivals" class='label snap'>New Arrivals</a>
+					<a href="snaps" class='label snap'>Snapbacks</a>
+					<a href="straps" class='label strap'>Strapbacks</a>
 					<a href="aboutus.jsp" class='label aboutus'>About Us</a>
                                         <a href="cart.jsp" class='label cart active'>Cart</a>
 					</div>

@@ -31,7 +31,7 @@ public class SnapClientServlet extends HttpServlet{
 		System.out.println(target);
 		
 		String jsonResponse = 
-				target.path("coolfittedrest").path("webapi").path("home").request().
+				target.path("coolfittedrest").path("webapi").path("snaps").request().
 				accept(MediaType.APPLICATION_JSON).
 				get(String.class);
 		

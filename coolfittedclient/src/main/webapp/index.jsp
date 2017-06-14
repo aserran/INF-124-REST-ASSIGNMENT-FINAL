@@ -24,7 +24,7 @@ and open the template in the editor.
 			<div class='content'>
 				<div class='menubar'>
 					<div class='name'>
-						<a href="index" class='label compname'>CoolFitted</a>
+						<a href="home" class='label compname'>CoolFitted</a>
 					</div>
 					<div id='men' class='menu'>
 						<a href="home" class='label home active'>Home</a>

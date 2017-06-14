@@ -31,7 +31,7 @@ public class StrapClientServlet extends HttpServlet{
 		System.out.println(target);
 		
 		String jsonResponse = 
-				target.path("coolfittedrest").path("webapi").path("home").request().
+				target.path("coolfittedrest").path("webapi").path("straps").request().
 				accept(MediaType.APPLICATION_JSON).
 				get(String.class);
 		
