@@ -20,15 +20,15 @@
 			<div class='content'>
 				<div class='menubar'>
 				<div class='name'>
-					<a href="index" class="label compname">CoolFitted</a>
+					<a href="home" class="label compname">CoolFitted</a>
 				</div>
-				<div class='menu'>
-					<a href="index" class='label home'>Home</a>
-					<a href="newarr" class='label snap'>New Arrivals</a>
-					<a href="snapbacks" class='label snap'>Snapbacks</a>
-					<a href="strapbacks" class='label strap'>Strapbacks</a>
-					<a href="aboutus.jsp" class='label aboutus'>About Us</a>
-                                        <a href="cart.jsp" class='label cart active'>Cart</a>
+					<div id='men' class='menu'>
+						<a href="home" class='label home'>Home</a>
+						<a href="newarrivals" class='label newarr'>New Arrivals</a>
+						<a href="snaps" class='label snap'>Snapbacks</a>
+						<a href="straps" class='label strap'>Strapbacks</a>
+						<a href="aboutus.jsp" class='label aboutus'>About us</a>
+                        <a href="cart.jsp" class='label cart active'>Cart</a>
 					</div>
 				</div>
                                 <div class="featcombo">
@@ -58,7 +58,7 @@
                                     <c:if test="${sessionScope.total!=0.0}">
                                         <div class="checkout">
                                             <center><label style='font-size: 18px;font-weight:bold;color:#000;font-size: 20px;'>Checkout Form:</label></center>
-                                            <center><form name="additem" class="orderdetails" id='checkout' action="Confirmation" method="post">
+                                            <center><form name="additem" class="orderdetails" id='checkout' action="coolfitted/ConfClientServlet" method="post">
                                                 <table cellspacing="10px">
 
                                                         <tr>

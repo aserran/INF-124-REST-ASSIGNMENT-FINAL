@@ -2,6 +2,7 @@ package org.coolfitted.coolfittedclient;
 
 import java.io.IOException;
 import java.net.URI;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -31,15 +32,15 @@ public class DetailsClientServlet extends HttpServlet{
 		System.out.println(target);
 		
 		String jsonResponse = 
-				target.path("coolfittedrest").path("webapi").path("details").request().
+				target.path("coolfittedrest").path("webapi").path("details").path(request.getParameter("param")).request().
 				accept(MediaType.APPLICATION_JSON).
 				get(String.class);
 		
 		ObjectMapper objectMapper = new ObjectMapper();
 		
-		Hat hat = objectMapper.readValue(jsonResponse, new TypeReference<Hat>(){});
+		List<Hat> hatlist = objectMapper.readValue(jsonResponse, new TypeReference<List<Hat>>(){});
 		// session stuff
-		request.setAttribute("hat", hat);
+		request.setAttribute("hatlist", hatlist);
 		try {
 			request.getRequestDispatcher("/details.jsp").forward(request, response);
 		} catch (ServletException e) {

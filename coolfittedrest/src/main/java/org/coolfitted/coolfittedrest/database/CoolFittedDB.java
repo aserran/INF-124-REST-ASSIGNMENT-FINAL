@@ -31,5 +31,8 @@ public class CoolFittedDB {
 		List<Hat> hats = DatabaseAccess.getStrapHats();
 		return hats;
 	}
-	
+	public static List<Hat> getHatDetails(String name){
+		List<Hat> hatlist = DatabaseAccess.getHatDetails(name);
+		return hatlist;
+	}	
 }

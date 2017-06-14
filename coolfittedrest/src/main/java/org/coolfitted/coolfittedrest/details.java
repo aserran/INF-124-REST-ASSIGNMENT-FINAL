@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
@@ -16,6 +17,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
 
+import org.coolfitted.coolfittedrest.model.Hat;
+import org.coolfitted.coolfittedrest.service.HatService;
 import org.glassfish.jersey.server.mvc.Viewable;
 
 // Plain old Java Object it does not extend as class or implements
@@ -28,33 +31,13 @@ import org.glassfish.jersey.server.mvc.Viewable;
 // The browser requests per default the HTML MIME type.
 
 //Sets the path to base URL + /hello
-@Path("/{parameter: details|cart}")
+@Path("/details/{param}")
 public class details {
-
-  // This method is called if TEXT_PLAIN is request
   @GET
-  @Produces(MediaType.TEXT_PLAIN)
-  public String sayPlainTextHello() {
-    return "here";
-  }
-
-  // This method is called if XML is request
-  @GET
-  @Produces(MediaType.TEXT_XML)
-  public String sayXMLHello() {
-    return "<?xml version=\"1.0\"?>" + "<hello> Hello Jersey" + "</hello>";
-  }
-
-  // This method is called if HTML is request
-  @GET
-  @Path("/hat")
-  @Produces(MediaType.TEXT_HTML)
-  public Response sayHtmlResponse(@QueryParam("name") String item, @Context HttpServletRequest request) {
+  @Produces({MediaType.APPLICATION_JSON})
+  public Response sayHtmlResponse(@PathParam("param") String item) {
       Map<String, Object> map = new HashMap<String, Object>();
-      map.put("title", "usul");
-      List<String> l = new ArrayList<String>();
-      l.add("light saber");
-      l.add("fremen clothes");
-      return Response.ok(new Viewable("/inf124pa4client/details", map)).build();
+      List<Hat> hatlist = HatService.getHatByName(item);
+		return Response.ok(hatlist).build();
   }
 }

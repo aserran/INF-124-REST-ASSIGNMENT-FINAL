@@ -33,9 +33,10 @@ public class HatService {
 		return straphats;
 	}
 	
-	//public Hat getHat(String hatname){
-		//return hats.get(hatname);
-	//}
+	public static List<Hat> getHatByName(String hatname){
+		List<Hat> hatlist = CoolFittedDB.getHatDetails(hatname);
+		return hatlist;
+	}
 	
 	
 	

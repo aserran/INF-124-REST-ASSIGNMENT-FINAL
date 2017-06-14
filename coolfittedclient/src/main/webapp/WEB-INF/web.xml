@@ -47,6 +47,22 @@
     	<servlet-name>StrapClientServlet</servlet-name>
     	<url-pattern>/straps</url-pattern>
     </servlet-mapping>
+    <servlet>
+    	<servlet-name>DetailsClientServlet</servlet-name>
+    	<servlet-class>org.coolfitted.coolfittedclient.DetailsClientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>DetailsClientServlet</servlet-name>
+    	<url-pattern>/details</url-pattern>
+    </servlet-mapping>
+    <servlet>
+    	<servlet-name>CartClientServlet</servlet-name>
+    	<servlet-class>org.coolfitted.coolfittedclient.CartClientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>CartClientServlet</servlet-name>
+    	<url-pattern>/cart</url-pattern>
+    </servlet-mapping>
     <welcome-file-list>
         <welcome-file>home</welcome-file>
     </welcome-file-list>

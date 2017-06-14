@@ -80,7 +80,7 @@ and open the template in the editor.
                                    
                                         <tr class = "row">
                                             <td>
-                                                <a class ="cell" onclick="itemclicked('<c:out value="${hatlist[0].imagepath}"/>')" href ="detailspage?param=${hatlist[0].imagename}">
+                                                <a class ="cell" onclick="itemclicked('<c:out value="${hatlist[0].imagepath}"/>')" href ="/coolfittedclient/details?param=${hatlist[0].imagename}">
                                                     <div class ="col-1">
                                                         <img src="<c:out value ="${hatlist[0].imagepath}"/>" width = "160" height="120">
                                                             <p><c:out value="${hatlist[0].imagetitle}"/>"<span><br><c:out value="${hatlist[0].imageprice}"/>"</span></p>
@@ -89,7 +89,7 @@ and open the template in the editor.
                                             </td>
                                         
                                             <td>
-                                                <a class ="cell" onclick="itemclicked('<c:out value="${hatlist[1].imagepath}"/>')" href ="detailspage?param=${hatlist[1].imagename}">
+                                                <a class ="cell" onclick="itemclicked('<c:out value="${hatlist[1].imagepath}"/>')" href ="/coolfittedclient/details?param=${hatlist[1].imagename}">
                                                     <div class ="col-2">
                                                         <img src="<c:out value ="${hatlist[1].imagepath}"/>" width ="160" height="120">
                                                         <p><c:out value="${hatlist[1].imagetitle}"/>"<span><br><c:out value="${hatlist[1].imageprice}"/>"</span></p>
@@ -98,7 +98,7 @@ and open the template in the editor.
                                             </td>
                                         
                                             <td>
-                                                <a class ="cell" onclick="itemclicked('<c:out value="${hatlist[2].imagepath}"/>')" href ="detailspage?param=${hatlist[2].imagename}">
+                                                <a class ="cell" onclick="itemclicked('<c:out value="${hatlist[2].imagepath}"/>')" href ="/coolfittedclient/details?param=${hatlist[2].imagename}">
                                                     <div class ="col-3">
                                                         <img src="<c:out value ="${hatlist[2].imagepath}"/>" width ="160" height="120">
                                                         <p><c:out value="${hatlist[2].imagetitle}"/>"<span><br><c:out value="${hatlist[2].imageprice}"/>"</span></p>
@@ -107,7 +107,7 @@ and open the template in the editor.
                                             </td>
                                         
                                             <td>
-                                                <a class ="cell" onclick="itemclicked('<c:out value="${hatlist[3].imagepath}"/>')" href ="detailspage?param=${hatlist[3].imagename}">
+                                                <a class ="cell" onclick="itemclicked('<c:out value="${hatlist[3].imagepath}"/>')" href ="/coolfittedclient/details?param=${hatlist[3].imagename}">
                                                     <div class ="col-4">
                                                         <img src="<c:out value ="${hatlist[3].imagepath}"/>" width ="160" height="120">
                                                         <p><c:out value="${hatlist[3].imagetitle}"/>"<span><br><c:out value="${hatlist[3].imageprice}"/>"</span></p>
@@ -117,7 +117,7 @@ and open the template in the editor.
                                         </tr>
                                         <tr class = "row">
                                             <td>
-                                                <a class ="cell" onclick="itemclicked('<c:out value="${hatlist[4].imagepath}"/>')" href ="detailspage?param=${hatlist[4].imagename}">
+                                                <a class ="cell" onclick="itemclicked('<c:out value="${hatlist[4].imagepath}"/>')" href ="/coolfittedclient/details?param=${hatlist[4].imagename}">
                                                     <div class ="col-1">
                                                         <img src="<c:out value ="${hatlist[4].imagepath}"/>" width = "160" height="120">
                                                             <p><c:out value="${hatlist[4].imagetitle}"/>"<span><br><c:out value="${hatlist[4].imageprice}"/>"</span></p>
@@ -126,7 +126,7 @@ and open the template in the editor.
                                             </td>
                                         
                                             <td>
-                                                <a class ="cell" onclick="itemclicked('<c:out value="${hatlist[5].imagepath}"/>')" href ="detailspage?param=${hatlist[5].imagename}">
+                                                <a class ="cell" onclick="itemclicked('<c:out value="${hatlist[5].imagepath}"/>')" href ="/coolfittedclient/details?param=${hatlist[5].imagename}">
                                                     <div class ="col-2">
                                                         <img src="<c:out value ="${hatlist[5].imagepath}"/>" width ="160" height="120">
                                                         <p><c:out value="${hatlist[5].imagetitle}"/>"<span><br><c:out value="${hatlist[5].imageprice}"/>"</span></p>
@@ -135,7 +135,7 @@ and open the template in the editor.
                                             </td>
                                         
                                             <td>
-                                                <a class ="cell" onclick="itemclicked('<c:out value="${hatlist[6].imagepath}"/>')" href ="detailspage?param=${hatlist[6].imagename}">
+                                                <a class ="cell" onclick="itemclicked('<c:out value="${hatlist[6].imagepath}"/>')" href ="/coolfittedclient/details?param=${hatlist[6].imagename}">
                                                     <div class ="col-3">
                                                         <img src="<c:out value ="${hatlist[6].imagepath}"/>" width ="160" height="120">
                                                         <p><c:out value="${hatlist[6].imagetitle}"/>"<span><br><c:out value="${hatlist[6].imageprice}"/>"</span></p>
@@ -144,7 +144,7 @@ and open the template in the editor.
                                             </td>
                                         
                                             <td>
-                                                <a class ="cell" onclick="itemclicked('<c:out value="${hatlist[7].imagepath}"/>')" href ="detailspage?param=${hatlist[7].imagename}">
+                                                <a class ="cell" onclick="itemclicked('<c:out value="${hatlist[7].imagepath}"/>')" href ="/coolfittedclient/details?param=${hatlist[7].imagename}">
                                                     <div class ="col-4">
                                                         <img src="<c:out value ="${hatlist[7].imagepath}"/>" width ="160" height="120">
                                                         <p><c:out value="${hatlist[7].imagetitle}"/>"<span><br><c:out value="${hatlist[7].imageprice}"/>"</span></p>
