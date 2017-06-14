@@ -33,20 +33,9 @@
 				</div>
                                 <div class="featcombo">
                                     <div class="combocontent">
-                                            Confirmation - Order #${orderid}
+                                            ${status}
                                     </div>
-                                    <div class="thank" style="margin-top:2%;color:#000;font-size: 16px;text-align: left;">
-                                        Name: ${name} <br>Email: ${email}<br>Total amount charged: $${total}<br/>Shipping Address: ${address}<br>Paid with card ending in: ****${last}
-                                    	<br/>
-                                    	<br/>
-                                    	<form action="/editorder" method="DELETE" onsubmit="return confirm('Are you sure you want to delete this order? Please click OK to confirm.');">
-                                    		<input type="submit" id="delete" value="Cancel Order"/>
-                                    	</form> 
-                                    	&middot;   
-                                    	<form action="/coolfittedclient/edit.jsp" onsubmit="return confirm('Are you sure you want to update this order?');">
-                                    		<input type="submit" id="update" value="Update shipping details" />
-                                    	</form> 
-                                    </div>
+                                    
                          
 				</div>
                                 <div class='footercombo' style="margin-top:20%;">

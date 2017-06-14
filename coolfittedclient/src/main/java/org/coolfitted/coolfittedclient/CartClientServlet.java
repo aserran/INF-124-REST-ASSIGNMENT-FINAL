@@ -59,6 +59,7 @@ public class CartClientServlet extends HttpServlet {
         System.out.println(total+"totalnow");
         session.setAttribute("total", total);
         session.setAttribute("orders",ordertemp);
+        
         if(session.getAttribute("quant")==null){
         	session.setAttribute("quant",q);
         }
