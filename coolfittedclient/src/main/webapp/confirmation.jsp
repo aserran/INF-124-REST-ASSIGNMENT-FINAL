@@ -33,11 +33,15 @@
 				</div>
                                 <div class="featcombo">
                                     <div class="combocontent">
-                                            Confirmation
+                                            Confirmation - Order #${orderid}
                                     </div>
-                                    <div class="thank" style="margin-top:2%;color:#000;font-size: 16px">
-                                        Thank you for your purchase, you will receive an email with details on your order.
+                                    <div class="thank" style="margin-top:2%;color:#000;font-size: 16px;text-align: left;">
+                                        Name: ${name} <br>Email: ${email}<br>Total amount charged: $${total}<br/>Shipping Address: ${address}<br>Paid with card ending in: ****${last}
+                                    	<br/>
+                                    	<br/>
+                                    	<a href="coolfittedclient/update">Update Shipping details</a>  &middot;  <a href="coolfittedclient/delete">Cancel Order</a>
                                     </div>
+                         
 				</div>
                                 <div class='footercombo' style="margin-top:20%;">
                                         <div class='combocontent' style="font-size: 20px">

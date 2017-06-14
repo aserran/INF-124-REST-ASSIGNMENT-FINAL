@@ -45,10 +45,10 @@
                                         </table></center>
                                     </div>
                                     <div class="subtot" style="margin-top:2%;color:#000;font-size: 16px">
-                                        <c:if test="${sessionScope.total==0.0}">
+                                        <c:if test="${total==0.0}">
                                             Your cart is empty!
                                         </c:if>
-                                        <c:if test="${sessionScope.total!=0.0}">
+                                        <c:if test="${total!=0.0}">
                                             Total: $${sessionScope.total}
                                         </c:if>                           
                                         
@@ -58,7 +58,7 @@
                                     <c:if test="${sessionScope.total!=0.0}">
                                         <div class="checkout">
                                             <center><label style='font-size: 18px;font-weight:bold;color:#000;font-size: 20px;'>Checkout Form:</label></center>
-                                            <center><form name="additem" class="orderdetails" id='checkout' action="coolfitted/ConfClientServlet" method="post">
+                                            <center><form name="additem" class="orderdetails" id='checkout' action="/coolfittedclient/confirmation" method="post">
                                                 <table cellspacing="10px">
 
                                                         <tr>
@@ -114,7 +114,7 @@
                                                         </tr>
                                                         <tr>
                                                                 <td><label name='expdate' id='expdate'>Expiration Date:</label></td>
-                                                <td><select id='expmonth'>
+                                                <td><select name="expMonth" id='expmonth'>
                                                     <option value="01">01</option>
                                                     <option value="02">02</option>
                                                     <option value="03">03</option>
@@ -128,7 +128,7 @@
                                                     <option value="11">11</option>
                                                     <option value="12">12</option>
                                                 </select>
-                                                <select id='expyear'>
+                                                <select name="expYear" id='expyear'>
                                                     <option value="16"> 2016</option>
                                                     <option value="17"> 2017</option>
                                                     <option value="18"> 2018</option>

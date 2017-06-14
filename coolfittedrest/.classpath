@@ -26,5 +26,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/Users/arca/Downloads/mysql-connector-java-5.1.42-bin.jar"/>
 	<classpathentry kind="lib" path="C:/Users/arca/Downloads/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/arca/Downloads/httpcomponents-client-4.5.3/lib/httpclient-4.5.3.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -53,9 +53,15 @@ public class CartClientServlet extends HttpServlet {
         double total = (Double.parseDouble(price))*q+tot;
         total = (double) Math.round(total * 100) / 100;
         Float.parseFloat(price.substring(1));
+        System.out.println(total+"totalnow");
         session.setAttribute("total", total);
         session.setAttribute("orders",ordertemp);
-        session.setAttribute("quant", session.getAttribute("quant")+quant);
+        if(session.getAttribute("quant")==null){
+        	session.setAttribute("quant",q);
+        }
+        else{
+        	session.setAttribute("quant", Integer.toString(Integer.parseInt(session.getAttribute("quant").toString())+q));
+        }
         RequestDispatcher rd = getServletContext().getRequestDispatcher("/cart.jsp");
         rd.forward(request, response);
     }

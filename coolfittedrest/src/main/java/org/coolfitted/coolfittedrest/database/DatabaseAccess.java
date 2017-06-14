@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.ws.rs.core.MultivaluedMap;
+
 import org.coolfitted.coolfittedrest.model.Hat;
 
 public class DatabaseAccess {
@@ -22,7 +24,25 @@ public class DatabaseAccess {
 	public DatabaseAccess(){
 		
 	}
-	
+	public static String insertOrder(MultivaluedMap<String, String> formParams){
+		String ide = "";
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+			Statement stmt = conn.createStatement();
+			boolean rs = stmt.execute("INSERT INTO orders (firstname,lastname,phonenumber,email,shippingaddress,city,state,zipcode,shippingmethod,creditname,cardnumber,cvv,expirationdate,totalprice,quantity) VALUES ('"+formParams.getFirst("fname")+"','"+formParams.getFirst("lname")+"','"+formParams.getFirst("phone")+"','"+formParams.getFirst("email")+"','"+formParams.getFirst("street")+"','"+formParams.getFirst("city")+"','"+formParams.getFirst("state")+"','"+formParams.getFirst("zip")+"', 'No shipping','"+formParams.getFirst("owner")+"','"+formParams.getFirst("card")+"','"+formParams.getFirst("cvv")+"','"+formParams.getFirst("date")+"','"+formParams.getFirst("total")+"','"+formParams.getFirst("quant")+"')");
+			String selectlastorderIDquery = "SELECT idorders FROM orders order by idorders DESC LIMIT 1";
+            ResultSet idrs = stmt.executeQuery(selectlastorderIDquery);
+            idrs.next();
+            ide = idrs.getString("idorders");
+				
+		}catch(SQLException se){
+			se.printStackTrace();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return ide;
+	}
 	public static List<Hat> getHomeHats(){
 		List<Hat> hatlist = new ArrayList<>();
 		try{
