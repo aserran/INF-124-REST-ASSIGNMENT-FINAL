@@ -10,14 +10,14 @@
 			<div class='content'>
 				<div class='menubar'>
 					<div class='name'>
-						<a href="index" class='label compname'>CoolFitted</a>
+						<a href="home" class='label compname'>CoolFitted</a>
 					</div>
 					<div class='menu'>
 						<a href="home" class='label home'>Home</a>
 						<a href="newarrivals" class='label snap'>New Arrivals</a>
 						<a href="snaps" class='label snap'>Snapbacks</a>
 						<a href="straps" class='label strap'>Strapbacks</a>
-						<a href="aboutus.html" class='label aboutus active'>About Us</a>
+						<a href="aboutus.jsp" class='label aboutus active'>About Us</a>
                                                 <a href="cart.jsp" class='label cart'>Cart</a>
 					</div>
 				</div>

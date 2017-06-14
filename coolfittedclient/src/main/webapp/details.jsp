@@ -25,10 +25,10 @@
 			<center>
 			<div class='menubar'>
 				<div class='name'>
-					<a href="index" class="label compname">CoolFitted</a>
+					<a href="home" class="label compname">CoolFitted</a>
 				</div>
 					<div id='men' class='menu'>
-						<a href="home" class='label home active'>Home</a>
+						<a href="home" class='label home'>Home</a>
 						<a href="newarrivals" class='label newarr'>New Arrivals</a>
 						<a href="snaps" class='label snap'>Snapbacks</a>
 						<a href="straps" class='label strap'>Strapbacks</a>
