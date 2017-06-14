@@ -24,6 +24,21 @@ public class DatabaseAccess {
 	public DatabaseAccess(){
 		
 	}
+	public static boolean deleteOrder(int orderid){
+		int rs = 0;
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+			Statement stmt = conn.createStatement();
+			rs = stmt.executeUpdate("DELETE FROM orders WHERE idorders='"+orderid+"'");
+				
+		}catch(SQLException se){
+			se.printStackTrace();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return rs>0;
+	}
 	public static String insertOrder(MultivaluedMap<String, String> formParams){
 		String ide = "";
 		try{
@@ -48,7 +63,6 @@ public class DatabaseAccess {
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-			System.out.println(conn.getSchema());
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(homequery);
 			while (rs.next()){
@@ -101,7 +115,6 @@ public class DatabaseAccess {
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-			System.out.println(conn.getSchema());
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(strapquery);
 			while (rs.next()){

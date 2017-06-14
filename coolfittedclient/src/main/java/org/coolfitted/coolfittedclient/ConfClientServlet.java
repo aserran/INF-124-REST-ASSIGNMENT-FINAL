@@ -1,6 +1,10 @@
 package org.coolfitted.coolfittedclient;
 
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,15 +14,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.UriBuilder;
 
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.type.TypeReference;
+import org.glassfish.jersey.client.ClientConfig;
 
 /**
  * Servlet implementation class ConfClientServlet
@@ -40,7 +54,7 @@ public class ConfClientServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpClient client = HttpClientBuilder.create().build();
         HttpPost post = new HttpPost("http://localhost:8080/coolfittedrest/webapi/conf");
-        HttpSession session = request.getSession();
+        HttpSession session = request.getSession(false);
 
         // Create some NameValuePair for HttpPost parameters
         List<NameValuePair> arguments = new ArrayList<NameValuePair>();
@@ -78,6 +92,36 @@ public class ConfClientServlet extends HttpServlet {
         } catch (IOException e) {
             e.printStackTrace();
         }
+	}
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        HttpSession session = request.getSession();
+		ClientConfig config = new ClientConfig();
+		Client client = ClientBuilder.newClient(config);
+		WebTarget target = client.target(getBaseURI());
+		String callResult = target
+				  .path("coolfittedrest")
+				  .path("webapi")
+				  .path("conf")
+				  .path("orders")
+				  .path(request.getParameter("orderid"))
+    	         .request(MediaType.APPLICATION_JSON)
+    	         .delete(String.class);
+		if("<result>success</result>".equals(callResult)){
+			session.invalidate();
+			response.sendRedirect("/coolfittedclient/home");
+		}else{
+			request.setAttribute("deleted", "Order could not be deleted. Please contact Support for more details");
+			RequestDispatcher rd = request.getRequestDispatcher("/confirmation.jsp");
+			try {
+				rd.include(request, response);
+			} catch (ServletException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	private static URI getBaseURI(){
+		return UriBuilder.fromUri("http://localhost").port(8080).build();
 	}
 
 }

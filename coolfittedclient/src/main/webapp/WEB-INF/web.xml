@@ -77,7 +77,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>EditOrderServlet</servlet-name>
-    <url-pattern>/editorder</url-pattern>
+    <url-pattern>/editorder/*</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>home</welcome-file>

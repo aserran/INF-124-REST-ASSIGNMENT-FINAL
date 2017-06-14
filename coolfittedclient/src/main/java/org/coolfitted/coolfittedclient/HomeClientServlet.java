@@ -2,12 +2,14 @@ package org.coolfitted.coolfittedclient;
 
 import java.io.IOException;
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
@@ -24,7 +26,14 @@ public class HomeClientServlet extends HttpServlet{
 
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		
+        HttpSession session = request.getSession(true);
+        if(session.getAttribute("orders")==null){
+            session.setAttribute("orders", new ArrayList<String>());
+        }
+        if(session.getAttribute("total")==null){
+            session.setAttribute("total", (double)0);
+            session.setAttribute("quant", 0);
+        } 
 		ClientConfig config = new ClientConfig();
 		Client client = ClientBuilder.newClient(config);
 		WebTarget target = client.target(getBaseURI());

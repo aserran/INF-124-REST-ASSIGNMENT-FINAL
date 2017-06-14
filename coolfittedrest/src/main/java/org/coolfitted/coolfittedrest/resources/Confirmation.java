@@ -8,6 +8,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -36,6 +37,8 @@ import org.coolfitted.coolfittedrest.database.DatabaseAccess;
 
 @Path("/conf")
 public class Confirmation {
+	   private static final String SUCCESS_RESULT="<result>success</result>";
+	   private static final String FAILURE_RESULT="<result>failure</result>";
 	public Confirmation(){		
 		}
   @POST
@@ -43,5 +46,15 @@ public class Confirmation {
   public Response generatePOSTresponse(MultivaluedMap<String, String> formParams) {
 	  String output = DatabaseAccess.insertOrder(formParams);
       return Response.status(200).entity(output).build();
+  }
+  @Path("/orders/{orderid}")
+  @DELETE
+  @Produces(MediaType.APPLICATION_JSON)
+  public String deleteOrder(@PathParam("orderid") int orderid){
+     boolean result = DatabaseAccess.deleteOrder(orderid);
+     if(result == true){
+        return SUCCESS_RESULT;
+     }
+     return FAILURE_RESULT;
   }
 }

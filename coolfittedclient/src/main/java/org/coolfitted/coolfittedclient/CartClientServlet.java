@@ -56,7 +56,6 @@ public class CartClientServlet extends HttpServlet {
         double total = (Double.parseDouble(price))*q+tot;
         total = (double) Math.round(total * 100) / 100;
         Float.parseFloat(price.substring(1));
-        System.out.println(total+"totalnow");
         session.setAttribute("total", total);
         session.setAttribute("orders",ordertemp);
         if(session.getAttribute("quant")==null){
