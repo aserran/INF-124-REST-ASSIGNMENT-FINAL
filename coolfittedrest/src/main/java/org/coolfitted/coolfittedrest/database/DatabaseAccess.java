@@ -12,9 +12,9 @@ import org.coolfitted.coolfittedrest.model.Hat;
 public class DatabaseAccess {
 
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	static final String DB_URL = "jdbc:mysql://localhost:3307/coolfitteddb";
+	static final String DB_URL = "jdbc:mysql://localhost/coolfitteddb";
 	static final String USER = "root";
-	static final String PASS = "inf124";
+	static final String PASS = "";
 	static final String homequery = "SELECT images.imagepath, images.imagename, details.title, details.description, details.price FROM images INNER JOIN details ON images.imagename=details.imagename AND images.idimages > 47";
 	static final String snapquery = "SELECT images.imagepath, images.imagename, details.title, details.description, details.price FROM images INNER JOIN details ON images.imagename=details.imagename AND images.imagename LIKE '%snap1%'";
 	static final String strapquery = "SELECT images.imagepath, images.imagename, details.title, details.description, details.price FROM images INNER JOIN details ON images.imagename=details.imagename AND images.imagename LIKE '%strap1%'";
@@ -58,6 +58,28 @@ public class DatabaseAccess {
 		}
 		return ide;
 	}
+	
+	public static String updateOrder(MultivaluedMap<String, String> formParams){
+		String ide = "";
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+			Statement stmt = conn.createStatement();
+			ResultSet idrs = stmt.executeQuery("SELECT * FROM orders ORDER BY idorders DESC LIMIT 1");
+			String id = idrs.getString("idorders");
+			boolean rs = stmt.execute("UPDATE orders SET firstname = "+formParams.getFirst("fname")+"', lastname = "+formParams.getFirst("lname")+"', phonenumber = "+formParams.getFirst("phone")+"', email = "+formParams.getFirst("email")+"', shippingaddress = "+formParams.getFirst("street")+"', city = "+formParams.getFirst("city")+"', state = "+formParams.getFirst("state")+"', zipcode = "+formParams.getFirst("zip")+"', shippingmethod = "+"'No Shipping'"+" WHERE idorders = "+id);
+			String selectlastorderIDquery = "SELECT idorders FROM orders order by idorders DESC LIMIT 1";
+            ResultSet idrs2 = stmt.executeQuery(selectlastorderIDquery);
+            idrs2.next();
+            ide = idrs2.getString("idorders");
+		}catch(SQLException se){
+			se.printStackTrace();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return ide;
+	}
+	
 	public static List<Hat> getHomeHats(){
 		List<Hat> hatlist = new ArrayList<>();
 		try{

@@ -58,6 +58,7 @@ public class CartClientServlet extends HttpServlet {
         Float.parseFloat(price.substring(1));
         session.setAttribute("total", total);
         session.setAttribute("orders",ordertemp);
+        
         if(session.getAttribute("quant")==null){
         	session.setAttribute("quant",q);
         }

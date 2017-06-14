@@ -28,26 +28,14 @@
 					<a href="snaps" class='label snap'>Snapbacks</a>
 					<a href="straps" class='label strap'>Strapbacks</a>
 					<a href="aboutus.jsp" class='label aboutus'>About Us</a>
-                                        <a href="cart.jsp" class='label cart'>Cart</a>
+                                        <a href="cart.jsp" class='label cart active'>Cart</a>
 					</div>
 				</div>
                                 <div class="featcombo">
                                     <div class="combocontent">
-                                            Confirmation - Order #${orderid}
+                                            ${status}
                                     </div>
-                                    <div class="thank" style="margin-top:2%;color:#000;font-size: 16px;text-align: left;">
-                                        Name: ${name} <br>Email: ${email}<br>Total amount charged: $${total}<br/>Shipping Address: ${address}<br>Paid with card ending in: ****${last}
-                                    	<br/>
-                                    	<br/>
-                                    	<form action="/coolfittedclient/confirmation" method="get" style="float:left;display:inline-block;margin-right:5%;" onsubmit="return confirm('Are you sure you want to delete this order? Please click OK to confirm.');" >
-                                    		<input type="submit" id="delete" value="Cancel Order"/> 
-                                    		<input id="orderid" name="orderid" value="${orderid}" type="hidden" />
-                                    		</form>
-                                    	<form action="/coolfittedclient/edit.jsp" onsubmit="return confirm('Are you sure you want to update this order?');">
-                                    		<input type="submit" id="update" value="Update shipping details" />
-                                    		<input id="orderid" name="orderid" value="${orderid}" type="hidden" />
-                                    	</form> 
-                                    </div>
+                                    
                          
 				</div>
                                 <div class='footercombo' style="margin-top:20%;">
