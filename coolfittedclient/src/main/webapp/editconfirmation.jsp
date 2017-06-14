@@ -33,10 +33,17 @@
 				</div>
                                 <div class="featcombo">
                                     <div class="combocontent">
-                                            ${status}
+                                            Order #${status}
                                     </div>
+                                    <center>
+                                    <div class="thank" style="margin-top:2%;color:#000;font-size: 16px;text-align: left;">
+                                    Your order has been updated!
+                                    <br/>
+                                    You will receive an email with the updated order details.
+                                    </div>
+                                    </center>
                                     
-                         
+                         	
 				</div>
                                 <div class='footercombo' style="margin-top:20%;">
                                         <div class='combocontent' style="font-size: 20px">

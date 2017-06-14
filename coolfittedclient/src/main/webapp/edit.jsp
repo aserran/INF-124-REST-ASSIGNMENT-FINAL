@@ -33,7 +33,7 @@
 				</div>
                                 <div class="featcombo">
                                     <div class="combocontent">
-                                            Edit Order
+                                            Update Order
                                     </div>
                                     <br/>
                                     <hr/>

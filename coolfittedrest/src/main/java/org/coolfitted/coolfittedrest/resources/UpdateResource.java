@@ -41,7 +41,7 @@ public class UpdateResource {
 		}
   @PUT
   @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-  public Response generatePOSTresponse(MultivaluedMap<String, String> formParams) {
+  public Response generatePUTresponse(MultivaluedMap<String, String> formParams) {
 	  String output = DatabaseAccess.updateOrder(formParams);
       return Response.status(200).entity(output).build();
   }
