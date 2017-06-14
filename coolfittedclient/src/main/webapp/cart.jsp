@@ -45,17 +45,17 @@
                                         </table></center>
                                     </div>
                                     <div class="subtot" style="margin-top:2%;color:#000;font-size: 16px">
-                                        <c:if test="${total==0.0}">
+                                        <c:if test="${empty sessionScope.total}">
                                             Your cart is empty!
                                         </c:if>
-                                        <c:if test="${total!=0.0}">
+                                        <c:if test="${not empty sessionScope.total}">
                                             Total: $${sessionScope.total}
                                         </c:if>                           
                                         
                                     </div>
                                     <br/>
                                     <hr/>
-                                    <c:if test="${sessionScope.total!=0.0}">
+                                    <c:if test="${not empty sessionScope.total}">
                                         <div class="checkout">
                                             <center><label style='font-size: 18px;font-weight:bold;color:#000;font-size: 20px;'>Checkout Form:</label></center>
                                             <center><form name="additem" class="orderdetails" id='checkout' action="/coolfittedclient/confirmation" method="post">

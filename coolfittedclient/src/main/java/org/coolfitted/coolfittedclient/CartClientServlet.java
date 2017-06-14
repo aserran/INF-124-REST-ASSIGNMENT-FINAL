@@ -48,6 +48,9 @@ public class CartClientServlet extends HttpServlet {
         }else{
             tot = (double)session.getAttribute("total");
         }
+        System.out.println(tot+"HEEER");
+
+        request.setAttribute("tot", tot);
         int q = Integer.parseInt(quant);
         //double total = (Double.parseDouble(price.substring(1))*Integer.parseInt(quant))+(double)session.getAttribute("total");
         double total = (Double.parseDouble(price))*q+tot;

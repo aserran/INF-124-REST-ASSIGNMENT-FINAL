@@ -169,7 +169,7 @@ and open the template in the editor.
                                         <tr class ='row'>
                                         <c:forEach var="im" items="${hatqueue}">
                                             <td>
-                                                <a class ="cell" onclick="itemclicked('<c:out value="${im}"/>')" href ="detailspage?param=${im}">
+                                                <a class ="cell" onclick="itemclicked('<c:out value="${im}"/>')" href ="/coolfittedclient/details?param=${im}">
                                                     <div class ="col-1">
                                                         <img src="Media/<c:out value="${im}"/>.jpg" width ="160" height="120">
                                                     </div>

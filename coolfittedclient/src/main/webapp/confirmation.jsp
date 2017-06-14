@@ -39,7 +39,13 @@
                                         Name: ${name} <br>Email: ${email}<br>Total amount charged: $${total}<br/>Shipping Address: ${address}<br>Paid with card ending in: ****${last}
                                     	<br/>
                                     	<br/>
-                                    	<a href="coolfittedclient/update">Update Shipping details</a>  &middot;  <a href="coolfittedclient/delete">Cancel Order</a>
+                                    	<form action="/editorder" method="DELETE" onsubmit="return confirm('Are you sure you want to delete this order? Please click OK to confirm.');">
+                                    		<input type="submit" id="delete" value="Cancel Order"/>
+                                    	</form> 
+                                    	&middot;   
+                                    	<form action="/editorder" method="UPDATE" onsubmit="return confirm('Are you sure you want to update this order?');">
+                                    		<input type="submit" id="update" value="Update shipping details" />
+                                    	</form> 
                                     </div>
                          
 				</div>

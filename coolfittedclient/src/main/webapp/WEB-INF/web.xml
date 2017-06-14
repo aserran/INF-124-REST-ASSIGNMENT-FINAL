@@ -63,14 +63,22 @@
     <servlet-name>CartClientServlet</servlet-name>
     <url-pattern>/cart</url-pattern>
   </servlet-mapping>
-    <servlet>
-    	<servlet-name>ConfClientServlet</servlet-name>
-    	<servlet-class>org.coolfitted.coolfittedclient.ConfClientServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-    	<servlet-name>ConfClientServlet</servlet-name>
-    	<url-pattern>/confirmation</url-pattern>
-    </servlet-mapping>
+  <servlet>
+    <servlet-name>ConfClientServlet</servlet-name>
+    <servlet-class>org.coolfitted.coolfittedclient.ConfClientServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ConfClientServlet</servlet-name>
+    <url-pattern>/confirmation</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>EditOrderServlet</servlet-name>
+    <servlet-class>org.coolfitted.coolfittedclient.EditOrderServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditOrderServlet</servlet-name>
+    <url-pattern>/editorder</url-pattern>
+  </servlet-mapping>
   <welcome-file-list>
     <welcome-file>home</welcome-file>
   </welcome-file-list>
