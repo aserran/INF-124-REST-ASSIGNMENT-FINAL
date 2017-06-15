@@ -49,7 +49,8 @@ public class SnapClientServlet extends HttpServlet{
 	}
 	
 	private static URI getBaseURI(){
-		return UriBuilder.fromUri("http://localhost").port(8080).build();
+		return UriBuilder.fromUri("http://andromeda-40.ics.uci.edu").port(5540).build();
+
 	}
 	
 }

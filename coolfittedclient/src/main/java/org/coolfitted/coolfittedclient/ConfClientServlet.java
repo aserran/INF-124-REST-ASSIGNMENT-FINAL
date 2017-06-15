@@ -53,7 +53,7 @@ public class ConfClientServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpClient client = HttpClientBuilder.create().build();
-        HttpPost post = new HttpPost("http://localhost:8080/coolfittedrest/webapi/conf");
+        HttpPost post = new HttpPost("http://andromeda-40.ics.uci.edu:5540/coolfittedrest/webapi/conf");
         HttpSession session = request.getSession(false);
 
         // Create some NameValuePair for HttpPost parameters
@@ -121,7 +121,7 @@ public class ConfClientServlet extends HttpServlet {
 		}
 	}
 	private static URI getBaseURI(){
-		return UriBuilder.fromUri("http://localhost").port(8080).build();
+		return UriBuilder.fromUri("http://andromeda-40.ics.uci.edu").port(5540).build();
 	}
 
 }

@@ -48,7 +48,7 @@ public class EditOrderServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpClient client = HttpClientBuilder.create().build();
-        HttpPut put = new HttpPut("http://localhost:8080/coolfittedrest/webapi/edit");
+        HttpPut put = new HttpPut("http://andromeda-40.ics.uci.edu:5540/coolfittedrest/webapi/edit");
         HttpSession session = request.getSession();
 
         // Create some NameValuePair for HttpPost parameters
